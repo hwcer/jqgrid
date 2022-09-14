@@ -86,7 +86,10 @@ func (this *Query) Page(db *cosmo.DB, body []byte) (*values.Paging, error) {
 	if err != nil {
 		return nil, err
 	}
-	tx = tx.Where(filter).View(paging)
+	if filter != nil {
+		tx = tx.Where(filter)
+	}
+	tx = tx.View(paging)
 	return paging, tx.Error
 }
 

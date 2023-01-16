@@ -2,10 +2,10 @@ package jqgrid
 
 import (
 	"encoding/json"
+	"github.com/hwcer/cosgo/schema"
 	"github.com/hwcer/cosgo/values"
 	"github.com/hwcer/cosmo"
 	"github.com/hwcer/cosmo/clause"
-	"github.com/hwcer/cosmo/schema"
 	"net/url"
 	"reflect"
 	"strconv"
@@ -60,7 +60,7 @@ func (this *Query) Model(model interface{}) (err error) {
 	if v, ok := model.(*schema.Schema); ok {
 		this.model = v
 	} else {
-		this.model, err = schema.Parse(model, schemaOptions)
+		this.model, err = schemaOptions.Parse(model)
 	}
 
 	return

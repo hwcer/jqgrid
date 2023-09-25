@@ -8,7 +8,7 @@ replace (
 )
 
 require (
-	github.com/hwcer/cosgo v0.0.3
+	github.com/hwcer/cosgo v0.0.4
 	github.com/hwcer/cosmo v0.0.0
 )
 
